@@ -8,7 +8,7 @@ For the MobileRQ iOS SDK, see [tree/master/dist/mrq-ios-sdk](dist/mrq-sdk-ios).
 
 For the MobileRQ Android SDK, see [tree/master/dist/mrq-android-sdk](dist/mrq-sdk-android).
 
-For MobileRQ technical documentation, visit the [wiki](wiki).
+For MobileRQ technical documentation, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki).
 
 # Contact
 

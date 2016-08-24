@@ -4,11 +4,17 @@
 
 This repository provides software assets and documentation related to working with MobileRQ.
 
-For the MobileRQ iOS SDK, see [tree/master/dist/mrq-ios-sdk](dist/mrq-sdk-ios).
+## iOS SDK
 
-For the MobileRQ Android SDK, see [tree/master/dist/mrq-android-sdk](dist/mrq-sdk-android).
+* [Download](dist/mrq-sdk-ios)
+* [API reference](https://mobilerq.github.io/mobilerq/MRQSDK-1.4.0-docs/html/index.html)
 
-For MobileRQ technical documentation, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki).
+## Android SDK
+
+* [Download](dist/mrq-sdk-android)
+* [API reference](http://todo)
+
+For technical guides, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki).
 
 # Contact
 

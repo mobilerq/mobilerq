@@ -15,7 +15,7 @@ For technical guides, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki
 
 * [Download](dist/mrq-sdk-android)
 * [API reference](http://todo)
-* 
+
 # Contact
 
 We're happy to help. Send questions to support@mobilerq.com.

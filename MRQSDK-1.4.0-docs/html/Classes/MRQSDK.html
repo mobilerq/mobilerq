@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MRQSDK Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MobileRQ iOS SDK 1.4.0 </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">MobileRQ</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/apiHost">apiHost</option>
+		
+		<option value="//api/name/clientID">clientID</option>
+		
+		<option value="//api/name/customerID">customerID</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/lastLocation">lastLocation</option>
+		
+		<option value="//api/name/lastNotification">lastNotification</option>
+		
+		<option value="//api/name/matchingContent">matchingContent</option>
+		
+		<option value="//api/name/matchingContentURL">matchingContentURL</option>
+		
+		<option value="//api/name/viewedContent">viewedContent</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/shared">+ shared</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/application:didFinishLaunchingWithOptions:">- application:didFinishLaunchingWithOptions:</option>
+		
+		<option value="//api/name/application:didReceiveRemoteNotification:">- application:didReceiveRemoteNotification:</option>
+		
+		<option value="//api/name/refresh">- refresh</option>
+		
+		<option value="//api/name/registerDeviceToken:">- registerDeviceToken:</option>
+		
+		<option value="//api/name/registerSlotName:">- registerSlotName:</option>
+		
+		<option value="//api/name/startMonitoringLocation">- startMonitoringLocation</option>
+		
+		<option value="//api/name/startMonitoringLocationIfAuthorized">- startMonitoringLocationIfAuthorized</option>
+		
+		<option value="//api/name/stopMonitoringLocation">- stopMonitoringLocation</option>
+		
+		<option value="//api/name/trackAllContentViewed">- trackAllContentViewed</option>
+		
+		<option value="//api/name/trackContentViewed:">- trackContentViewed:</option>
+		
+		<option value="//api/name/updateLocation:">- updateLocation:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MRQSDK Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>CLLocationManagerDelegate</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MRQSDK.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The MRQSDK makes it easy for your application to interact with MobileRQ. It performs the following services:</p>
+
+<ul>
+<li>Collect data you share and sends it to the MobileRQ service.</li>
+<li>Process responses from the MobileRQ service.</li>
+<li>Process push messages sent by the MobileRQ service.</li>
+<li>Display rich content within the app using custom views MRQContentView, MRQContentTableViewController, and MRQSlotViewController.</li>
+</ul>
+
+
+<p>Get the latest SDK and docs at <a href="http://www.mobilerq.com/documentation/ios-sdk/">http://www.mobilerq.com/documentation/ios-sdk/</a>. Need help? Contact us at <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#x73;&#x75;&#112;&#112;&#x6f;&#x72;&#x74;&#x40;&#x6d;&#111;&#98;&#x69;&#108;&#101;&#x72;&#113;&#46;&#x63;&#111;&#109;">&#x73;&#117;&#112;&#112;&#x6f;&#114;&#116;&#64;&#109;&#x6f;&#x62;&#x69;&#108;&#101;&#x72;&#x71;&#x2e;&#99;&#111;&#x6d;</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Getting the MRQSDK Instance" name="task_Getting the MRQSDK Instance"></a>
+						<h2 class="task-title">Getting the MRQSDK Instance</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/shared" title="shared"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shared">+&nbsp;shared</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A shared instance of the MRQSDK.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (MRQSDK *)shared</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Getting and Setting the MRQSDK Delegate" name="task_Getting and Setting the MRQSDK Delegate"></a>
+						<h2 class="task-title">Getting and Setting the MRQSDK Delegate</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Protocols/MRQSDKDelegate.html">MRQSDKDelegate</a> delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property id&lt;MRQSDKDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Configuring MRQSDK" name="task_Configuring MRQSDK"></a>
+						<h2 class="task-title">Configuring MRQSDK</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/clientID" title="clientID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientID">&nbsp;&nbsp;clientID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The client ID assigned to your app by the MobileRQ service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSString *clientID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/customerID" title="customerID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/customerID">&nbsp;&nbsp;customerID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unique identifier for the end user of the app. Make sure you securely encode personally identifiable information before setting this.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSString *customerID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/apiHost" title="apiHost"></a>
+	<h3 class="method-title"><code><a href="#//api/name/apiHost">&nbsp;&nbsp;apiHost</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The API host name and scheme. It defaults to the MobileRQ service. Only change this when debugging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property NSString *apiHost</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Hooking Application Events" name="task_Hooking Application Events"></a>
+						<h2 class="task-title">Hooking Application Events</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/application:didFinishLaunchingWithOptions:" title="application:didFinishLaunchingWithOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/application:didFinishLaunchingWithOptions:">&ndash;&nbsp;application:didFinishLaunchingWithOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set up MRQSDK after application launch.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)application:(UIApplication *)<em>application</em> didFinishLaunchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>application</code></th>
+						<td><p>The singleton UIApplication object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>launchOptions</code></th>
+						<td><p>The NSDictionary object received by UIApplication application:didFinishLauchingWithOptions:</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the app was launched by a remote notification and it was recognized by MRQSDK, otherwise returns NO.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This should be called from UIApplication application:didFinishLaunchingWithOptions:. If the app was launched with a remote
+notification, this will receive MobileRQ push messages and set <a href="#//api/name/lastNotification">lastNotification</a>. You need to call <a href="#//api/name/refresh">refresh</a> to download push message
+content.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html">UIApplication</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/application:didReceiveRemoteNotification:" title="application:didReceiveRemoteNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/application:didReceiveRemoteNotification:">&ndash;&nbsp;application:didReceiveRemoteNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Handle a remote push notification. Call from application:didReceiveRemoteNotification:.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)application:(UIApplication *)<em>application</em> didReceiveRemoteNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>application</code></th>
+						<td><p>The singleton UIApplication object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>The NSDictionary object received by the application&rsquo;s UIApplication application:didReceiveRemoteNotification: method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the message was recognized by MRQSDK, otherwise returns NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Location Tracking" name="task_Location Tracking"></a>
+						<h2 class="task-title">Location Tracking</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/updateLocation:" title="updateLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateLocation:">&ndash;&nbsp;updateLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method each time the application receives a location update.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateLocation:(CLLocation *)<em>currentLocation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currentLocation</code></th>
+						<td><p>A CLLocation object either from CLLocationManager or manually created.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startMonitoringLocation" title="startMonitoringLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startMonitoringLocation">&ndash;&nbsp;startMonitoringLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Begin monitoring location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startMonitoringLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This monitors location while the app is in the background. Calling this will prompt the user for permission using CLLocationManager
+requestAlwaysAuthorization. The prompt requires you add NSLocationAlwaysUsageDescription in your apps Info.plist file. Once you call
+startMonitoringLocation you no longer need to call <a href="#//api/name/updateLocation:">updateLocation:</a>.</p><div class="warning"><p><strong>Warning:</strong> <em>From Apple&rsquo;s developer docs:</em> Requesting “Always” authorization is discouraged because of the potential negative impacts to
+user privacy. You should request this level of authorization only when doing so offers a genuine benefit to the user.</p></div>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/">CLLocationManager</a></p></code></li>
+					
+					<li><code><p>~!@<a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009247">Information Property List Key
+Reference</a>@!~</p></code></li>
+					
+					<li><code><p><a href="#//api/name/stopMonitoringLocation">- stopMonitoringLocation</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startMonitoringLocationIfAuthorized" title="startMonitoringLocationIfAuthorized"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startMonitoringLocationIfAuthorized">&ndash;&nbsp;startMonitoringLocationIfAuthorized</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Begin monitoring location only if the app is authorized.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startMonitoringLocationIfAuthorized</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if authorizationStatus is always, otherwise NO</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Like <a href="#//api/name/startMonitoringLocation">startMonitoringLocation</a>, this monitors location while the app is in the background. Background monitoring requires &ldquo;Always&rdquo;
+authorization. If CLLocationManager authorizationStatus is not kCLAuthorizationStatusAuthorizedAlways this method will do nothing.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/">CLLocationManager</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/startMonitoringLocation">- startMonitoringLocation</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/stopMonitoringLocation">- stopMonitoringLocation</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopMonitoringLocation" title="stopMonitoringLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopMonitoringLocation">&ndash;&nbsp;stopMonitoringLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop monitoring location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopMonitoringLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastLocation" title="lastLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastLocation">&nbsp;&nbsp;lastLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The last location seen by MRQSDK. This is updated when you use <a href="#//api/name/updateLocation:">updateLocation:</a> or <a href="#//api/name/startMonitoringLocation">startMonitoringLocation</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) CLLocation *lastLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Push Messaging" name="task_Push Messaging"></a>
+						<h2 class="task-title">Push Messaging</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/registerDeviceToken:" title="registerDeviceToken:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerDeviceToken:">&ndash;&nbsp;registerDeviceToken:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register an APN deviceToken with MobileRQ. Call from UIApplication application:didRegisterForRemoteNotificationsWithDeviceToken:.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerDeviceToken:(NSData *)<em>deviceToken</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceToken</code></th>
+						<td><p>the APN device token</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerSlotName:" title="registerSlotName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerSlotName:">&ndash;&nbsp;registerSlotName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register a slot with MobileRQ. Content can be assigned to registered slots.
+Register the name when adding a slot view to your app.
+Calling <a href="#//api/name/refresh">refresh</a> sends the list of registered slot names to MobileRQ.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerSlotName:(NSString *)<em>slotName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>slotName</code></th>
+						<td><p>The slot name to register with MRQ</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastNotification" title="lastNotification"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastNotification">&nbsp;&nbsp;lastNotification</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The last remote notification received from the MRQ service. This is set by <a href="#//api/name/application:didFinishLaunchingWithOptions:">application:didFinishLaunchingWithOptions:</a> or
+<a href="#//api/name/application:didReceiveRemoteNotification:">application:didReceiveRemoteNotification:</a> and cleared by <a href="#//api/name/refresh">refresh</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSDictionary *lastNotification</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Content" name="task_Content"></a>
+						<h2 class="task-title">Content</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/matchingContentURL" title="matchingContentURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchingContentURL">&nbsp;&nbsp;matchingContentURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL for matching content from the last <a href="#//api/name/refresh">refresh</a>, or nil if there is no matching content.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSURL *matchingContentURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/matchingContent" title="matchingContent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/matchingContent">&nbsp;&nbsp;matchingContent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The matching content from the last <a href="#//api/name/refresh">refresh</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *matchingContent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/viewedContent" title="viewedContent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/viewedContent">&nbsp;&nbsp;viewedContent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The content viewed since the last <a href="#//api/name/refresh">refresh</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *viewedContent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refresh" title="refresh"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refresh">&ndash;&nbsp;refresh</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Refresh context by sending an update to MobileRQ.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)refresh</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackAllContentViewed" title="trackAllContentViewed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackAllContentViewed">&ndash;&nbsp;trackAllContentViewed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to indicate that all <a href="../Classes/MRQContent.html">MRQContent</a> was viewed. Views are tracked by the MobileRQ service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackAllContentViewed</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackContentViewed:" title="trackContentViewed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackContentViewed:">&ndash;&nbsp;trackContentViewed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to indicate that <a href="../Classes/MRQContent.html">MRQContent</a> was viewed. Views are tracked by the MobileRQ service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackContentViewed:(MRQContent *)<em>mrqContent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mrqContent</code></th>
+						<td><p>The <a href="../Classes/MRQContent.html">MRQContent</a> that was viewed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 MobileRQ. All rights reserved. Updated: 2016-08-23</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

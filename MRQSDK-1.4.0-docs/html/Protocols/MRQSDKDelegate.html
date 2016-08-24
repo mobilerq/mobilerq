@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MRQSDKDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MobileRQ iOS SDK 1.4.0 </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">MobileRQ</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/mrqsdk:didFailWithError:">- mrqsdk:didFailWithError:</option>
+		
+		<option value="//api/name/mrqsdk:updateWithMatches:">- mrqsdk:updateWithMatches:</option>
+		
+		<option value="//api/name/mrqsdkRequestData:">- mrqsdkRequestData:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MRQSDKDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MRQSDK.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <a href="../Classes/MRQSDK.html">MRQSDK</a> requires you to implement MRQSDKDelegate. The MRQSDKDelegate allows your application to share data with <a href="../Classes/MRQSDK.html">MRQSDK</a> and respond to
+content update events. Optionally, you can recieve errors encountered by <a href="../Classes/MRQSDK.html">MRQSDK</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mrqsdkRequestData:" title="mrqsdkRequestData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mrqsdkRequestData:">&ndash;&nbsp;mrqsdkRequestData:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The MobileRQ SDK will call this method to request information from the app. Return a dictionary containing data that will be shared with
+the MobileRQ service.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)mrqsdkRequestData:(MRQSDK *)<em>mrq</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mrq</code></th>
+						<td><p>The calling <a href="../Classes/MRQSDK.html">MRQSDK</a> object.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary containing information for the request data.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Example</p>
+
+<pre><code> - (NSDictionary*) mrqsdkRequestData:(MRQSDK*)mrq {
+   NSDictionary *flight = @{
+     kMRQFlightDepartureTime : @"2012-07-13T13:00:00Z",
+     kMRQFlightAirline : @"UA",
+     kMRQFlightAirline : @"LAX",
+     kMRQFlightDestination : @"ORD",
+     @"ReservationNumber" : @"123456" // flight property
+   };
+   NSArray *flights = @[ flight ];
+   NSDictionary *trip = @{ kMRQTripFlights : flights };
+   NSArray *trips = @[ trip ];
+   return @{
+     kMRQUserTrips : trips,
+     kMRQTags: @[ @"demo", @"sample app", @"show lots"],
+     kMRQProperties: @{ @"favouriteColour": @"liquorice" }, // context property
+   };
+ }
+</code></pre>
+
+<p><strong>Request Data Dictionary Keys</strong></p>
+
+<p>Request data contains data about the traveler and the trips they have planned.</p>
+
+<table>
+<thead>
+<tr>
+<th>Key           </th>
+<th align="center">Required</th>
+<th> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kMRQTags      </td>
+<td align="center"> No     </td>
+<td> An array of groups the device belongs to. Offers can match one or more tags.</td>
+</tr>
+<tr>
+<td>kMRQProperties</td>
+<td align="center"> No     </td>
+<td> A dictionary containing context properties.</td>
+</tr>
+<tr>
+<td>kMRQUserTrips </td>
+<td align="center"> No     </td>
+<td> An array of scheduled trips. Also see <a href="#trip_keys">kMRQUserTrips Keys</a>.</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>kMRQUserTrips Keys <a name="trip_keys"></a></strong></p>
+
+<p>A dictionary containing the itinerary for a scheduled trip.</p>
+
+<table>
+<thead>
+<tr>
+<th>Key             </th>
+<th align="center">Required</th>
+<th> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kMRQTripFlights </td>
+<td align="center"> No     </td>
+<td> An array of scheduled flights. Also see <a href="#flight_keys">kMRQTripFlights Keys</a>.</td>
+</tr>
+<tr>
+<td>kMRQTripHotels  </td>
+<td align="center"> No     </td>
+<td> An array of hotel reservations. Also see <a href="#hotel_keys">kMRQTripHotels Keys</a></td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>kMRQTripFlights Keys <a name="flight_keys"></a></strong></p>
+
+<p>A dictionary containing the details for a schedule flight.</p>
+
+<table>
+<thead>
+<tr>
+<th>Key                     </th>
+<th align="center">Required</th>
+<th> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kMRQFlightDepartureTime </td>
+<td align="center"> Yes    </td>
+<td> The departure time in ISO8601. Example @”2012-07-13T13:00:00-7:00”</td>
+</tr>
+<tr>
+<td>kMRQFlightAirline       </td>
+<td align="center"> Yes    </td>
+<td> The IATA airline code. Example @”UA”</td>
+</tr>
+<tr>
+<td>kMRQFlightNumber        </td>
+<td align="center"> Yes    </td>
+<td> The IATA flight number. Example @”123”</td>
+</tr>
+<tr>
+<td>kMRQFlightOrigin        </td>
+<td align="center"> No     </td>
+<td> The IATA departure airport code. Example @”LAX”</td>
+</tr>
+<tr>
+<td>kMRQFlightDestination   </td>
+<td align="center"> No     </td>
+<td> The IATA arrival airport code. Example @”ORD”</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Any other keys will become flight properties in the MRQ application.</p>
+
+<p><strong>kMRQTripHotels Keys <a name="hotel_keys"></a></strong></p>
+
+<p>A dictionary containing the details of a hotel reservation.</p>
+
+<table>
+<thead>
+<tr>
+<th>Key                        </th>
+<th align="center">Required</th>
+<th> Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kMRQHotelName              </td>
+<td align="center"> Yes    </td>
+<td> The full name of the hotel. MobileRQ uses the hotel name to match a reservation with a property.</td>
+</tr>
+<tr>
+<td>kMRQHotelChain             </td>
+<td align="center"> No     </td>
+<td> The name of the hotel chain</td>
+</tr>
+<tr>
+<td>kMRQHotelCanceled          </td>
+<td align="center"> No     </td>
+<td> YES if the reservation was canceled</td>
+</tr>
+<tr>
+<td>kMRQHotelCheckInTime       </td>
+<td align="center"> No     </td>
+<td> The check in time in ISO8601. Example @”2012-07-13T13:00:00-7:00”</td>
+</tr>
+<tr>
+<td>kMRQHotelCheckOutTime      </td>
+<td align="center"> No     </td>
+<td> The checkout time in ISO8601. Example @”2012-07-15T13:00:00-7:00”</td>
+</tr>
+<tr>
+<td>kMRQHotelCheckedIn         </td>
+<td align="center"> No     </td>
+<td> YES or No depending on whether checkin has occurred</td>
+</tr>
+<tr>
+<td>kMRQHotelCheckedOut        </td>
+<td align="center"> No     </td>
+<td> YES or No depending on whether checkout has occurred</td>
+</tr>
+<tr>
+<td>kMRQHotelLocation          </td>
+<td align="center"> No     </td>
+<td> The location of the property helps match the reservation with MobileRQ’s database</td>
+</tr>
+<tr>
+<td>kMRQHotelLocationLatitude  </td>
+<td align="center"> No     </td>
+<td> The property latitude</td>
+</tr>
+<tr>
+<td>kMRQHotelLocationLongitude </td>
+<td align="center"> No     </td>
+<td> The property longitude</td>
+</tr>
+<tr>
+<td>kMRQHotelLocationCity      </td>
+<td align="center"> No     </td>
+<td> The hotel city</td>
+</tr>
+<tr>
+<td>kMRQHotelLocationRegion    </td>
+<td align="center"> No     </td>
+<td> The hotel state or province</td>
+</tr>
+<tr>
+<td>kMRQHotelLocationCountry   </td>
+<td align="center"> No     </td>
+<td> The hotel country</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Any other keys will become hotel properties in the MRQ application.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mrqsdk:updateWithMatches:" title="mrqsdk:updateWithMatches:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mrqsdk:updateWithMatches:">&ndash;&nbsp;mrqsdk:updateWithMatches:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when content matches request data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)mrqsdk:(MRQSDK *)<em>mrq</em> updateWithMatches:(NSInteger)<em>matching</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mrq</code></th>
+						<td><p>The calling <a href="../Classes/MRQSDK.html">MRQSDK</a> object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>matching</code></th>
+						<td><p>The number of matches.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mrqsdk:didFailWithError:" title="mrqsdk:didFailWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mrqsdk:didFailWithError:">&ndash;&nbsp;mrqsdk:didFailWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when an error occurs while updating content</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)mrqsdk:(MRQSDK *)<em>mrq</em> didFailWithError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mrq</code></th>
+						<td><p>The calling <a href="../Classes/MRQSDK.html">MRQSDK</a> object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An NSError describing the error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MRQSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 MobileRQ. All rights reserved. Updated: 2016-08-23</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

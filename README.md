@@ -4,6 +4,8 @@
 
 This repository provides software assets and documentation related to working with MobileRQ.
 
+For technical guides, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki).
+
 ## iOS SDK
 
 * [Download](dist/mrq-sdk-ios)
@@ -13,9 +15,7 @@ This repository provides software assets and documentation related to working wi
 
 * [Download](dist/mrq-sdk-android)
 * [API reference](http://todo)
-
-For technical guides, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki).
-
+* 
 # Contact
 
 We're happy to help. Send questions to support@mobilerq.com.

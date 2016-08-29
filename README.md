@@ -2,12 +2,21 @@
 
 # Welcome to MobileRQ
 
-This repository provides software assets and documentation related to MobileRQ. 
+This repository provides SDK downloads and documentation for MobileRQ. 
 
-## Getting Started
+## iOS 
 
-* [iOS Getting Started Guide](https://github.com/mobilerq/mobilerq/wiki/iOS%20Getting%20Started%20Guide)
-* [Android Getting Started Guide](https://github.com/mobilerq/mobilerq/wiki/Android%20Getting%20Started%20Guide)
+* [Getting Started](https://github.com/mobilerq/mobilerq/wiki/iOS%20Getting%20Started%20Guide)
+* [SDK Reference](ios/docs/)
+* [Downloads](ios/)
+
+## Android
+
+* [Getting Started](https://github.com/mobilerq/mobilerq/wiki/Android%20Getting%20Started%20Guide)
+* [SDK Reference](android/javadoc/)
+* [Downloads](android/)
+
+## More
 
 For technical guides, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki).
 

@@ -9,7 +9,7 @@ This repository provides software assets and documentation related to MobileRQ.
 * [iOS Getting Started Guide](https://github.com/mobilerq/mobilerq/wiki/iOS%20Getting%20Started%20Guide)
 * [Android Getting Started Guide](https://github.com/mobilerq/mobilerq/wiki/Android%20Getting%20Started%20Guide)
 
-For technical guides, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki)
+For technical guides, visit the [wiki](https://github.com/mobilerq/mobilerq/wiki).
 
 # Contact
 
